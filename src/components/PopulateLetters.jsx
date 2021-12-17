@@ -6,7 +6,7 @@ function PopulateLetters(){
 
  
 
-    return <div>
+    return <div className="row populateLetters">
             {Data.map(letterData => <Letter Dear={letterData.name} />)}
     </div>
 }
