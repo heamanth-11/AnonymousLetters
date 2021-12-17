@@ -50,12 +50,13 @@ border: solid #b3b5b4;
   text-align: center;
   /* margin: auto; */
   display: block;
+  padding: 1rem 5%;
 
 
 }
 .letterimg{
 /* display: none; */
-
+width: 100%;
 }
 .letter-text{
   z-index: -1;
@@ -73,6 +74,10 @@ border: solid #b3b5b4;
   vertical-align: middle;
   /* padding: 1rem ; */
 
+}
+.populateLetters{
+
+  padding: 1rem 10%;
 }
 .social-media{
   margin:auto;
@@ -184,11 +189,6 @@ textarea:focus{
   .padded{
     margin: 0 5rem;
   }
-  .envp{
-    width:65%;
-    border: solid black;
-    box-shadow: 1px 2px #b3b5b4;
-  }
 
 }
 @media screen and (max-width:600px){
@@ -198,5 +198,10 @@ textarea:focus{
   .padded{
     margin: 0 1rem;
   }
- 
+  .populateLetters{
+    padding: 1rem 2%;
+  }
+ .letter-text h1{
+ font-size: 12px;
+ }
 }

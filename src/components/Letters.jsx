@@ -6,7 +6,7 @@ function Letter(props){
    
 
    
-    return<div className=" letters col-md-6 col-sm-12 col-12">
+    return<div className=" letters col-md-6 col-sm-6 col-6">
       
       <div className="letter-text">
       <h1 >{props.Dear}</h1>
