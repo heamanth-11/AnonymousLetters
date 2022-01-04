@@ -1,22 +1,36 @@
-import {React} from "react"
-import { Link } from "react-router-dom";
+import {React, useState} from "react"
+import Axios from "axios"
 
 function LetterPost(){
     const heightChange = { height:"2.5rem"}
-    const changecolor = ()=> document.getElementsByClassName("input").style.backgroundColor="white";
+    // const changecolor = ()=> document.getElementsByClassName("input").style.backgroundColor="white";
+    const [to,setTo] = useState();
+    const [message ,setMessage] = useState();
+    const [from , setFrom] = useState();
+  
+  const submitHandler =(e)=>{
+      
+     const data = {to,message,from}
+     console.log(data)
+     Axios.post("http://localhost:8000/",data).then(response => console.log(response)).catch((err)=>{
+         console.log(err)
+     })
+   
+  }
+    
     return <div className="letterPost">
         
 
-        <form >
+        <form onSubmit={submitHandler}>
             <h6>Dear...</h6>
             <label htmlFor="to"> e.g. 'my grandmother', 'the universe' or 'my future self'</label>
-            <input autoFocus style={heightChange} className="input" id="to" type="text" name="to" /><br />
+            <input autoFocus style={heightChange} className="input" id="to" type="text" name="to" onChange={(e)=>{setTo(e.target.value)}} /><br />
             <br />
             <label htmlFor="message" style={{color:"black"}}>Write Your Letter Here... *</label><br />
-            <textarea className="input" name="message" id="message"  rows='5' ></textarea><br />
+            <textarea className="input" name="message" id="message"  rows='5'onChange={(e)=>{setMessage(e.target.value)}} ></textarea><br />
             <br /><h6>From... *</h6>
             <label htmlFor="from" >Keep your name here anonymous <br />e.g. 'Someone you used to know' or 'your son </label>
-            <input type="text" style={heightChange} id='from' className="input" name="from" /><br />
+            <input type="text" style={heightChange} id='from' className="input" name="from" onChange={(e)=>{setFrom(e.target.value)}} /><br />
         <br />     <button className='lettersubmit' type="submit">SUBMIT</button><br />
         </form>
         <br />
