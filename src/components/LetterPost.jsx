@@ -1,20 +1,21 @@
 import {React, useState} from "react"
-import Axios from "axios"
+import axios from "axios"
 
 function LetterPost(){
     const heightChange = { height:"2.5rem"}
     // const changecolor = ()=> document.getElementsByClassName("input").style.backgroundColor="white";
-    const [to,setTo] = useState();
-    const [message ,setMessage] = useState();
-    const [from , setFrom] = useState();
+    const [to,setTo] = useState("someOne");
+    const [message ,setMessage] = useState("hi there");
+    const [from , setFrom] = useState("me");
   
   const submitHandler =(e)=>{
-      
+     e.preventDefault();
      const data = {to,message,from}
      console.log(data)
-     Axios.post("http://localhost:8000/",data).then(response => console.log(response)).catch((err)=>{
+    axios.post("http://localhost:8000/insert",{to:to,message:message,from:from}).then(response => console.log(response)).catch((err)=>{
          console.log(err)
      })
+
    
   }
     
