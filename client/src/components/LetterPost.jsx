@@ -1,6 +1,7 @@
 import {React, useState} from "react"
 import axios from "axios"
 
+
 function LetterPost(){
     const heightChange = { height:"2.5rem"}
     // const changecolor = ()=> document.getElementsByClassName("input").style.backgroundColor="white";
@@ -10,6 +11,7 @@ function LetterPost(){
   
   const submitHandler =(e)=>{
      e.preventDefault();
+     
      const data = {to,message,from}
      console.log(data)
     axios.post("http://localhost:8000/insert",{to:to,message:message,from:from}).then(response => console.log(response)).catch((err)=>{

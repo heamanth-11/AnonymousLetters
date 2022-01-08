@@ -8,9 +8,13 @@ import LetterPost from "./LetterPost"
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import LegalNotice from "./LegalNotice"
 import PopulateLetters from "./PopulateLetters"
+import {realdata} from "../data"
 
 
-function App(){
+
+async function App(){
+const daata =  realdata()
+await console.log(daata)
 return <Router>
      <div>
     <Header />

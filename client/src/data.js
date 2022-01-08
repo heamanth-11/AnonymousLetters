@@ -1,3 +1,4 @@
+ import axios from "axios"
  const Data = [
     {name : "virat" , message : "be the best you can be "},
     {name : "rohit" , message : "sun will rise again tommorrow"},
@@ -7,4 +8,14 @@
     {name : "de villiers" , message : " ipl is harder than world cup"}
 
 ]
+ function realdata(){
+    axios.get("http://localhost:8000").then((response)=>{
+        console.log(response)
+        return response.data
+    })
+
+    
+
+}
 export default Data;
+export {realdata}
