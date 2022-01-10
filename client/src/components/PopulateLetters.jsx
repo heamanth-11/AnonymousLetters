@@ -1,22 +1,23 @@
 import React from "react"
 import Letter from "./Letters"
-import Data from "../data"
 import { useState,useEffect } from "react"
 import axios from "axios"
-function PopulateLetters(){
+ function PopulateLetters(){
 
 const [data ,setData] = useState([])
-useEffect(()=>{
+ useEffect(()=>{
     axios.get("http://localhost:8000").then((response)=>{
-        console.log(response)
-        setData( response.data)
+      
+      setData( response.data)
     })
 
 },[])
 
+   console.log(data)
+
     return <div className="row populateLetters">
         
-            {data.map((letterData )=> <Letter Dear={letterData.to} />)}
+            { data.map((letterData )=> <Letter Dear={letterData.to} key={letterData._id} />)}
     </div>
 }
 

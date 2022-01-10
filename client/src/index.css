@@ -69,6 +69,10 @@ width: 100%;
    
   
 }
+.letter-text button{
+  border: none;
+  background: none;
+}
 .letters h1{
   font-weight: 600;
   vertical-align: middle;
